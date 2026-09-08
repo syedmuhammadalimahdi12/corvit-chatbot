@@ -1,0 +1,172 @@
+[
+  {
+    "id": "about-corvit",
+    "title": "About Corvit",
+    "category": "about",
+    "tags": ["corvit", "about", "history", "networking institute"],
+    "sample": false,
+    "content": "Corvit is one of Pakistan's long-running IT training institutes, best known for computer networking education. It trains students on vendor technologies from Cisco, Huawei, Juniper, Microsoft, VMware, Aruba and Red Hat, covering routing, switching, security, wireless, data centre and cloud topics. Over the years it has widened its course catalogue beyond networking into web development, cyber security, data science, cloud/DevOps, graphic design and digital marketing.",
+    "image": null,
+    "link": "#about"
+  },
+  {
+    "id": "courses-networking",
+    "title": "Networking courses",
+    "category": "courses",
+    "tags": ["networking", "ccna", "ccnp", "cisco", "huawei", "juniper", "routing", "switching"],
+    "sample": false,
+    "content": "Networking is Corvit's flagship track. Typical courses include CCNA and CCNP (Cisco routing & switching), Huawei HCIA/HCIP, Juniper JNCIA, network security, wireless networking and data-centre technologies. These suit students who enjoy working with infrastructure, want a telecom/ISP/enterprise-IT career, or plan to sit vendor certification exams.",
+    "image": "course-networking.svg",
+    "link": "#courses"
+  },
+  {
+    "id": "courses-webdev",
+    "title": "Web development courses",
+    "category": "courses",
+    "tags": ["web development", "html", "css", "javascript", "react", "wordpress", "mern"],
+    "sample": false,
+    "content": "Web development courses cover HTML, CSS, JavaScript, front-end frameworks such as React, back-end basics, and WordPress site building. Good fit for students who want to freelance, build products, or move into software/web roles.",
+    "image": "course-webdev.svg",
+    "link": "#courses"
+  },
+  {
+    "id": "courses-cybersecurity",
+    "title": "Cyber security courses",
+    "category": "courses",
+    "tags": ["cyber security", "ethical hacking", "ceh", "chfi", "penetration testing"],
+    "sample": false,
+    "content": "Cyber security offerings include ethical hacking (CEH-aligned), digital forensics (CHFI-aligned), and network security fundamentals. Suited to students who like problem solving under a security lens and want SOC analyst, penetration tester or security-admin roles.",
+    "image": "course-cyber.svg",
+    "link": "#courses"
+  },
+  {
+    "id": "courses-datascience",
+    "title": "Data science & AI courses",
+    "category": "courses",
+    "tags": ["data science", "python", "machine learning", "artificial intelligence", "ai"],
+    "sample": false,
+    "content": "Data science and AI courses teach Python, statistics, machine learning fundamentals and applied AI. A good match for students with a maths/stats background, or CS graduates who want analytics, ML or AI-adjacent roles.",
+    "image": "course-datasci.svg",
+    "link": "#courses"
+  },
+  {
+    "id": "courses-cloud-devops",
+    "title": "Cloud & DevOps courses",
+    "category": "courses",
+    "tags": ["cloud", "aws", "azure", "devops", "cloud computing"],
+    "sample": false,
+    "content": "Cloud and DevOps courses cover AWS/Azure fundamentals, virtualization, containers and CI/CD basics. Recommended for students who already know some networking or Linux and want to move into cloud infrastructure or DevOps roles.",
+    "image": "course-cloud.svg",
+    "link": "#courses"
+  },
+  {
+    "id": "courses-graphic-design",
+    "title": "Graphic design courses",
+    "category": "courses",
+    "tags": ["graphic design", "print media", "ui", "ux", "adobe"],
+    "sample": false,
+    "content": "Graphic design courses cover design software, print media design and UI basics. Good for creatively minded students who want design, branding or UI/UX-adjacent careers.",
+    "image": "course-graphic.svg",
+    "link": "#courses"
+  },
+  {
+    "id": "courses-digital-marketing",
+    "title": "Digital marketing courses",
+    "category": "courses",
+    "tags": ["digital marketing", "seo", "social media marketing", "marketing"],
+    "sample": false,
+    "content": "Digital marketing courses cover SEO, social media marketing and e-commerce basics. A fit for business-minded students who want to run marketing for a company or freelance for clients.",
+    "image": null,
+    "link": "#courses"
+  },
+  {
+    "id": "admission-paid",
+    "title": "Paid batches",
+    "category": "admission",
+    "tags": ["paid", "fee", "self funded", "evening classes", "weekend classes"],
+    "sample": true,
+    "content": "SAMPLE DATA — replace with real figures. Paid batches are self-funded: students pay course fees directly and can usually choose morning, evening or weekend timing. Paid seats are generally available year-round with more flexible start dates than NAVTTC batches.",
+    "image": null,
+    "link": "#admission"
+  },
+  {
+    "id": "admission-navttc",
+    "title": "NAVTTC (free) batches",
+    "category": "admission",
+    "tags": ["navttc", "free training", "government sponsored", "scholarship"],
+    "sample": true,
+    "content": "SAMPLE DATA — replace with the current NAVTTC cycle details. NAVTTC batches are government-sponsored, so training is free for eligible students, but seats are limited, cohorts open on fixed announcement dates, and admission usually requires meeting an education/age eligibility criteria and registering on the NAVTTC portal before a deadline.",
+    "image": null,
+    "link": "#admission"
+  },
+  {
+    "id": "paid-vs-navttc-comparison",
+    "title": "Paid vs NAVTTC — how to choose",
+    "category": "admission",
+    "tags": ["paid vs navttc", "compare", "which is better", "free vs paid"],
+    "sample": true,
+    "content": "SAMPLE DATA. Choose NAVTTC if you meet the eligibility criteria, can attend on the fixed schedule, and are comfortable applying before a cohort's deadline — you get free training and a certificate but limited seats and fixed timing. Choose a paid batch if you want to start sooner, need flexible (evening/weekend) timing, or don't meet a specific NAVTTC cycle's eligibility criteria.",
+    "image": null,
+    "link": "#admission"
+  },
+  {
+    "id": "timetable-info",
+    "title": "Class timings",
+    "category": "timetable",
+    "tags": ["timetable", "schedule", "timing", "class timing", "batch timing"],
+    "sample": true,
+    "content": "SAMPLE DATA — replace with the actual timetable PDF content collected in data/raw. Typically batches run as morning, evening or weekend slots, with each class lasting one to two hours, a few days a week, over a course spanning several weeks to a few months depending on the track.",
+    "image": null,
+    "link": "#timetable"
+  },
+  {
+    "id": "campuses",
+    "title": "Campuses",
+    "category": "infrastructure",
+    "tags": ["campus", "branch", "location", "address", "infrastructure"],
+    "sample": true,
+    "content": "SAMPLE DATA — replace with your verified branch list and addresses. Corvit has historically operated multiple campuses across Pakistan (for example Islamabad/Rawalpindi, Lahore, Karachi, Multan and Faisalabad), each with labs equipped for hands-on networking, computing and design practicals.",
+    "image": null,
+    "link": "#campuses"
+  },
+  {
+    "id": "admission-process",
+    "title": "How to apply",
+    "category": "admission",
+    "tags": ["apply", "admission process", "registration", "how to enroll", "documents"],
+    "sample": true,
+    "content": "SAMPLE DATA — confirm against your campus's actual process. General steps: 1) pick a course and batch type (paid or NAVTTC), 2) visit or contact the campus to register, 3) submit CNIC and educational documents (and check NAVTTC eligibility if applicable), 4) pay the fee for paid batches or wait for NAVTTC confirmation, 5) attend the orientation/first class.",
+    "image": null,
+    "link": "#admission"
+  },
+  {
+    "id": "certification-info",
+    "title": "Certificates you can earn",
+    "category": "certification",
+    "tags": ["certificate", "certification", "cisco certified", "international certification"],
+    "sample": false,
+    "content": "Depending on the course, students can work toward vendor certifications (e.g. Cisco, Huawei, Juniper, CEH/CHFI) in addition to a course-completion certificate from the institute. NAVTTC-sponsored batches are often paired with an internationally recognised certification track.",
+    "image": null,
+    "link": "#courses"
+  },
+  {
+    "id": "contact-info",
+    "title": "Contact",
+    "category": "contact",
+    "tags": ["contact", "phone", "email", "whatsapp", "helpline"],
+    "sample": true,
+    "content": "SAMPLE DATA — put your real phone number, email and WhatsApp link here so the assistant can share them.",
+    "image": null,
+    "link": "#contact"
+  },
+  {
+    "id": "course-recommendation-guide",
+    "title": "Which course fits which student",
+    "category": "guidance",
+    "tags": ["which course is best", "recommend a course", "confused", "career advice", "help me choose"],
+    "sample": false,
+    "content": "Quick fit guide the assistant should reason with: interested in infrastructure/telecom -> Networking. Wants to build apps/websites/freelance -> Web Development. Security-minded, likes investigating -> Cyber Security. Strong in maths/stats, wants analytics/AI -> Data Science & AI. Already knows networking/Linux, wants ops roles -> Cloud & DevOps. Creative/artistic -> Graphic Design. Business-minded, wants to market products -> Digital Marketing. If a student is undecided, ask about their background (education, interests, prior IT exposure) and time availability (can they commit to a fixed NAVTTC schedule, or need evening/weekend flexibility) before recommending.",
+    "image": null,
+    "link": "#courses"
+  }
+]

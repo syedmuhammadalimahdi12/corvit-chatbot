@@ -1,0 +1,12 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+  # Make sure the JSON knowledge base gets shipped alongside the function.
+  included_files = ["data/**"]
+
+[dev]
+  publish = "public"
+  functions = "netlify/functions"

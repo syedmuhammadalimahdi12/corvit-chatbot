@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Corvit — Find your course, get your questions answered</title>
+<meta name="description" content="Corvit IT training — networking, web development, cyber security, data science, cloud and design courses. Ask our assistant which course fits you." />
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="#" class="brand"><img src="assets/images/corvit logo.png" alt="Corvit Systems" class="brand-mark" /> <span>Corvit</span></a>
+    <ul class="nav-links">
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#admission">Admission</a></li>
+      <li><a href="#timetable">Timetable</a></li>
+      <li><a href="#campuses">Campuses</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta" data-open-chat>Ask the assistant</button>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<header class="hero" id="about">
+  <div class="container">
+    <div>
+      <p class="eyebrow">IT training institute · Pakistan · Since 2000</p>
+      <h1>Not sure which IT course fits you?</h1>
+      <p class="lede">Corvit Systems has trained IT professionals for over 26 years — Cisco and Huawei networking, cyber security, cloud, DevOps, web development and design. Tell our assistant your background — it'll point you to the right course, delivery mode and admission route.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-open-chat>Chat with the assistant</button>
+        <a class="btn btn-ghost" href="#courses">Browse courses</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>26+</strong><span>years training IT professionals</span></div>
+        <div><strong>20+</strong><span>vendor certifications</span></div>
+        <div><strong>Paid & NAVTTC</strong><span>batch options</span></div>
+      </div>
+    </div>
+    <div>
+      <svg class="hero-diagram" viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path class="edge" d="M160 40 L60 130" />
+        <path class="edge" d="M160 40 L260 130" />
+        <path class="edge" d="M60 130 L160 220" />
+        <path class="edge" d="M260 130 L160 220" />
+        <path class="edge" d="M60 130 L260 130" />
+        <circle class="node" cx="160" cy="40" r="14" />
+        <circle class="node" cx="60" cy="130" r="14" />
+        <circle class="node" cx="260" cy="130" r="14" />
+        <circle class="node" cx="160" cy="220" r="14" />
+        <circle class="node-pulse" cx="160" cy="130" r="5" />
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="modes" class="tight">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">How you can train</p>
+      <h2>Pick the format that fits your schedule</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card mode-card"><div class="mode-icon">🏫</div><h3>Classroom</h3><p style="color:var(--slate-soft);font-size:0.9rem;margin:0">On-campus sessions with hands-on lab access.</p></div>
+      <div class="card mode-card"><div class="mode-icon">👤</div><h3>One-to-one</h3><p style="color:var(--slate-soft);font-size:0.9rem;margin:0">Private sessions paced around you.</p></div>
+      <div class="card mode-card"><div class="mode-icon">🏢</div><h3>Corporate / on-site</h3><p style="color:var(--slate-soft);font-size:0.9rem;margin:0">Customized training delivered at your organization.</p></div>
+    </div>
+    <div class="grid grid-3" style="margin-top:20px">
+      <div class="card mode-card"><div class="mode-icon">💻</div><h3>Online</h3><p style="color:var(--slate-soft);font-size:0.9rem;margin:0">Live e-learning for self-paced, remote students.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="courses">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Courses</p>
+      <h2>Pick a track, then get certified</h2>
+      <p>Corvit groups 20+ vendor certifications (Cisco, Huawei, EC-Council, AWS, Microsoft, Red Hat and more) into these tracks. Ask the assistant if you'd rather get a personal recommendation.</p>
+    </div>
+    <div class="grid grid-3" id="course-grid"></div>
+  </div>
+</section>
+
+<section id="admission" class="tight" style="background:var(--paper-dim)">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Admission</p>
+      <h2>Paid batch or NAVTTC (free)?</h2>
+      <p>Both routes lead to the same courses — the difference is cost, timing and eligibility.</p>
+    </div>
+    <div class="note-banner">The details below are examples. Ask the assistant or your campus for the current fee, eligibility and dates.</div>
+    <div class="grid compare-grid">
+      <div class="card compare-card">
+        <h3><span class="badge-dot badge-navttc"></span>NAVTTC (free)</h3>
+        <ul>
+          <li>Government-sponsored — no course fee for eligible students</li>
+          <li>Limited seats, fixed cohort start dates</li>
+          <li>Requires meeting an education/age eligibility criteria</li>
+          <li>Apply via the NAVTTC portal before the deadline</li>
+        </ul>
+      </div>
+      <div class="card compare-card">
+        <h3><span class="badge-dot badge-paid"></span>Paid batch</h3>
+        <ul>
+          <li>Self-funded, flexible morning/evening/weekend timing</li>
+          <li>Rolling admissions — start sooner</li>
+          <li>No government eligibility restrictions</li>
+          <li>Register directly with the campus</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top:56px">
+      <p class="eyebrow">How to apply</p>
+      <h2>Four steps to your first class</h2>
+    </div>
+    <ol class="steps">
+      <li><div><strong>Pick a course &amp; batch type</strong><p style="margin:4px 0 0;color:var(--slate-soft)">Use the course list above, or ask the assistant for a recommendation.</p></div></li>
+      <li><div><strong>Register with the campus</strong><p style="margin:4px 0 0;color:var(--slate-soft)">Visit, call, or message the campus you'd like to attend.</p></div></li>
+      <li><div><strong>Submit documents</strong><p style="margin:4px 0 0;color:var(--slate-soft)">CNIC and educational certificates — plus NAVTTC eligibility proof if applicable.</p></div></li>
+      <li><div><strong>Confirm your seat</strong><p style="margin:4px 0 0;color:var(--slate-soft)">Pay the fee (paid batches) or receive NAVTTC confirmation, then attend orientation.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="timetable">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Timetable</p>
+      <h2>Morning, evening or weekend</h2>
+      <p>Class timing depends on the course and campus. Replace this with your real timetable once it's collected in <code>data/raw</code>.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card"><h3>Morning</h3><p style="color:var(--slate-soft);font-size:0.92rem">Weekday classes, typically 1–2 hours per session.</p></div>
+      <div class="card"><h3>Evening</h3><p style="color:var(--slate-soft);font-size:0.92rem">For students working or studying during the day.</p></div>
+      <div class="card"><h3>Weekend</h3><p style="color:var(--slate-soft);font-size:0.92rem">Saturday/Sunday sessions for a flexible pace.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="campuses" class="tight" style="background:var(--paper-dim)">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Campuses</p>
+      <h2>Find a campus near you</h2>
+    </div>
+    <div>
+      <span class="campus-chip">Islamabad</span>
+      <span class="campus-chip">Rawalpindi</span>
+      <span class="campus-chip">Lahore</span>
+      <span class="campus-chip">Karachi</span>
+      <span class="campus-chip">Multan</span>
+      <span class="campus-chip">Faisalabad</span>
+    </div>
+    <p style="margin-top:14px;color:var(--slate-soft);font-size:0.9rem">Sample list — replace with your verified branch addresses.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Contact</p>
+      <h2>Still have questions?</h2>
+      <p>The assistant in the bottom-right corner can answer most questions instantly, any time.</p>
+    </div>
+    <button class="btn btn-primary" data-open-chat>Open the assistant</button>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>© <span id="year"></span> Corvit — sample site built for a RAG chatbot demo.</div>
+    <div><a href="#courses">Courses</a> &nbsp;·&nbsp; <a href="#admission">Admission</a> &nbsp;·&nbsp; <a href="#contact">Contact</a></div>
+  </div>
+</footer>
+
+<!-- Chat widget -->
+<button class="chat-launcher" id="chat-launcher" aria-label="Open chat">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+</button>
+
+<div class="chat-panel" id="chat-panel">
+  <div class="chat-header">
+    <img class="chat-logo" src="assets/images/corvit logo.png" alt="Corvit Systems" />
+    <div>
+      <strong>Corvit Assistant</strong>
+      <span>Ask about courses, fees, timing</span>
+    </div>
+    <button class="chat-close" id="chat-close" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-body" id="chat-body"></div>
+  <div class="quick-replies" id="quick-replies">
+    <button data-q="Which course is best for me?">Which course is best for me?</button>
+    <button data-q="Paid vs NAVTTC, what's the difference?">Paid vs NAVTTC?</button>
+    <button data-q="What's the timetable like?">Timetable</button>
+  </div>
+  <form class="chat-input" id="chat-form">
+    <input id="chat-input" type="text" placeholder="Type your question…" autocomplete="off" />
+    <button type="submit" aria-label="Send">➤</button>
+  </form>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

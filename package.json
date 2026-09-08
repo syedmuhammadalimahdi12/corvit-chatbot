@@ -1,0 +1,13 @@
+{
+  "name": "corvit-chatbot",
+  "version": "1.0.0",
+  "description": "Corvit landing page with a RAG chatbot (Netlify Functions + TF-IDF retrieval + gpt-oss-120b)",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "netlify dev",
+    "test:rag": "node scripts/test-rag.js"
+  }
+}
