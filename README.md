@@ -27,128 +27,189 @@ corvit-chatbot/
 │   └── assets/images/          ← SVG course icons + favicon
 ├── netlify/functions/
 │   ├── chat.js                 ← main endpoint: retrieval + LLM call + fallback
+# 🎓 Corvit AI Admissions Assistant
+
+> A smart, friendly chatbot for Corvit Systems that helps students discover the right IT course, understand admission options, and find useful campus guidance.
+
+[![Live on Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-00C7B7?logo=netlify&logoColor=white)](https://www.netlify.com/)
+[![Powered by Groq](https://img.shields.io/badge/AI-Groq%20LLM-f97316)](https://groq.com/)
+
+## ✨ What This Project Does
+
+Corvit AI Admissions Assistant combines a modern institute website with a retrieval-augmented chatbot. Visitors can ask natural-language questions about:
+
+- 📚 Networking, web development, cybersecurity, AI, cloud, DevOps, and design courses
+- 🎯 Course recommendations based on interests and career goals
+- 📝 Paid admission and NAVTTC batch options
+- 🕒 Morning, evening, weekend, and online learning formats
+- 🏫 Corvit campuses and contact guidance
+- 🖼️ Related course images and useful links inside chat responses
+
+The assistant searches Corvit's local knowledge base first, then uses the configured language model to create a concise answer. Optional web search can provide additional current information when enabled.
+
+## 🚀 Highlights
+
+- 🎨 Responsive landing page for desktop, tablet, and mobile
+- 💬 Floating chatbot with quick questions and typing indicator
+- 🧠 TF-IDF retrieval with no vector database required
+- 🤖 Groq-compatible OpenAI chat completions integration
+- 🔁 Automatic fallback model support
+- 🔍 Optional Tavily web search integration
+- 🖼️ Corvit branding, logo, campus background, and course artwork
+- ⚡ Serverless Netlify Function backend
+- 🔐 Environment variables kept outside the repository
+
+## 🧩 How It Works
+
+```text
+Visitor asks a question
+               │
+               ▼
+Browser chatbot widget
+               │
+               ▼
+Netlify Function: /.netlify/functions/chat
+               │
+               ├── Searches data/knowledge_base.json
+               ├── Optionally checks Tavily web search
+               └── Sends grounded context to the LLM
+               │
+               ▼
+Answer, sources, images, and page recommendations
+```
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | HTML, CSS, vanilla JavaScript |
+| Backend | Netlify Functions |
+| Retrieval | Custom TF-IDF search |
+| Language model | Groq OpenAI-compatible API |
+| Optional search | Tavily API |
+| Hosting | Netlify |
+
+## 📁 Project Structure
+
+```text
+corvit-chatbot/
+├── public/
+│   ├── index.html                 # Main website
+│   ├── css/style.css              # Website and chatbot styling
+│   ├── js/main.js                 # Navigation and course cards
+│   ├── js/chatbot.js              # Chat interface and API calls
+│   └── assets/images/             # Logo, campus photo, and course artwork
+├── netlify/functions/
+│   ├── chat.js                    # Chat API endpoint
 │   └── lib/
-│       ├── rag.js              ← TF-IDF retrieval engine (no external embedding API)
-│       ├── llm.js              ← calls gpt-oss-120b, auto-falls back on failure
-│       └── websearch.js        ← optional live web search (Tavily)
+│       ├── rag.js                 # TF-IDF retrieval engine
+│       ├── llm.js                 # LLM requests and fallback handling
+│       └── websearch.js            # Optional Tavily search
 ├── data/
-│   ├── knowledge_base.json     ← the chatbot's dataset ("Step 1" from your plan)
-│   └── raw/                    ← drop your collected PDFs/PNGs/screenshots here
-├── scripts/test-rag.js         ← quick local test, no server needed
-├── netlify.toml
-├── package.json
-└── .env.example
+│   ├── knowledge_base.json        # Corvit facts used by the assistant
+│   └── raw/                       # Source documents and collected material
+├── scripts/test-rag.js            # Retrieval sanity test
+├── netlify.toml                   # Netlify build and function settings
+└── package.json
 ```
 
-## 1. The dataset (your plan's Step 1)
+## ⚡ Run Locally
 
-`data/knowledge_base.json` is a **starter dataset** — real Corvit facts (its networking
-heritage, course categories, NAVTTC's general structure) mixed with clearly-labeled
-`"sample": true` entries for anything that changes often or varies by campus (fees,
-exact timetable, branch addresses, contact numbers). The chatbot is instructed to tell
-users when it's citing sample data.
+### Requirements
 
-To make it accurate for your institute:
-1. Put the PDFs/screenshots you collect (fee sheets, timetables, course outlines) in `data/raw/`.
-2. Turn each into one or more entries in `data/knowledge_base.json` using this shape:
+- Node.js 18 or newer
+- A Groq API key
+- Netlify CLI
 
-```json
-{
-  "id": "unique-id",
-  "title": "Short title",
-  "category": "courses | admission | timetable | contact | ...",
-  "tags": ["keywords", "a", "student", "might", "type"],
-  "sample": false,
-  "content": "The actual fact, written as plain sentences.",
-  "image": "course-networking.svg",   // optional, must exist in public/assets/images
-  "link": "#courses"                  // optional, anchor on the landing page
-}
-```
-
-No rebuild step is needed — the function reads this JSON file directly, and retrieval
-(a small TF-IDF search, not a vector database) runs over it at request time.
-
-## 2. Run it locally
-
-You need [Node.js 18+](https://nodejs.org) and the Netlify CLI (this project uses
-Netlify Functions for the backend, so you can't just double-click `index.html` —
-the chat needs the function running too).
+### Install and configure
 
 ```bash
 npm install -g netlify-cli
-cd corvit-chatbot
-cp .env.example .env      # then fill in LLM_API_KEY (see step 3)
+```
+
+Create a `.env` file in the project root. Never commit this file.
+
+```env
+LLM_API_KEY=your_groq_api_key
+LLM_API_BASE_URL=https://api.groq.com/openai/v1
+LLM_MODEL=openai/gpt-oss-120b
+LLM_FALLBACK_MODEL=openai/gpt-oss-20b
+TAVILY_API_KEY=
+```
+
+Start the website and chatbot together:
+
+```bash
 netlify dev
 ```
 
-This serves the site **and** the function together, usually at `http://localhost:8888`.
+Open the local URL shown in the terminal, usually `http://localhost:8888`. Use `netlify dev` instead of opening `public/index.html` directly because the chatbot needs the Netlify Function endpoint.
 
-To sanity-check retrieval without starting a server at all:
+## 🧪 Test Retrieval
+
 ```bash
 npm run test:rag
 ```
 
-## 3. Get an API key for gpt-oss-120b
+This checks questions about course selection, NAVTTC, paid batches, and networking courses without starting a web server.
 
-The default provider is **Groq**, which hosts `openai/gpt-oss-120b` for free with
-generous rate limits:
-1. Go to https://console.groq.com/keys and create a key.
-2. Put it in `.env` as `LLM_API_KEY=...`.
+## 🧠 Update the Knowledge Base
 
-Want to use a different OpenAI-compatible provider instead (OpenRouter, Together AI,
-Fireworks, etc.)? Just change `LLM_API_BASE_URL` and `LLM_MODEL` in `.env` — no code
-changes needed, since `netlify/functions/lib/llm.js` talks to any standard
-`/chat/completions` endpoint.
+Add verified Corvit information to `data/knowledge_base.json`:
 
-## 4. Deploy to Netlify
-
-**Option A — CLI:**
-```bash
-netlify deploy --prod
+```json
+{
+   "id": "networking-ccna",
+   "title": "CCNA courses",
+   "category": "courses",
+   "tags": ["ccna", "cisco", "networking"],
+   "sample": false,
+   "content": "Corvit offers networking training for students interested in Cisco and enterprise IT careers.",
+   "image": "course-networking.svg",
+   "link": "#courses"
+}
 ```
 
-**Option B — GitHub + Netlify dashboard (recommended for a portfolio project):**
-1. Push this folder to a new GitHub repo:
-   ```bash
-   git init
-   git add .
-   git commit -m "Corvit RAG chatbot"
-   git branch -M main
-   git remote add origin https://github.com/<you>/corvit-chatbot.git
-   git push -u origin main
-   ```
-2. On [app.netlify.com](https://app.netlify.com) → **Add new site → Import an existing
-   project** → pick the repo. Netlify will read `netlify.toml` automatically
-   (publish = `public`, functions = `netlify/functions`).
-3. In **Site settings → Environment variables**, add `LLM_API_KEY` (and
-   `TAVILY_API_KEY` if you want live web search). Never commit `.env` to GitHub —
-   it's already in `.gitignore`.
-4. Deploy. Your chatbot endpoint will be live at
-   `https://<your-site>.netlify.app/.netlify/functions/chat`.
+Use `"sample": true` for fees, dates, schedules, or campus details that still need confirmation. The assistant is instructed to identify sample information instead of presenting it as guaranteed fact.
 
-This gives you the GitHub link and the Netlify link from your "what I need" list. For
-the zip file, everything in this folder is it — zip it as-is once you've filled in your
-real dataset.
+## 🌐 Deploy to Netlify
 
-## How the key features work
+1. Push the project to a GitHub repository.
+2. Open [Netlify](https://app.netlify.com/) and choose **Add new site**.
+3. Select **Import an existing project**, connect GitHub, and choose the repository.
+4. Deploy from the `main` branch.
+5. Add these variables in **Site configuration → Environment variables**:
 
-| Feature (from your plan) | Where it lives |
-|---|---|
-| Fallback model | `netlify/functions/lib/llm.js` — retries on `LLM_FALLBACK_MODEL` if the primary model errors, times out, or is rate-limited |
-| Chat also recommends images | `chat.js` returns an `images[]` array built from matched knowledge-base entries' `image` field; rendered as thumbnails under the reply in `chatbot.js` |
-| Professional UI | `public/css/style.css` — custom dark hero with an animated network diagram, light content sections, a floating chat widget with typing indicator |
-| Website-like recommendation | `chat.js` returns a `recommendations[]` array of in-page links (`#courses`, `#admission`, …) built from matched entries' `link` field |
-| Online search feature | `netlify/functions/lib/websearch.js` — optional, only runs when the local knowledge base has no confident match and `TAVILY_API_KEY` is set |
-| Guide students to the best course | `course-recommendation-guide` entry in the knowledge base, written specifically to help the model reason about fit |
+```text
+LLM_API_KEY=your_new_groq_api_key
+LLM_API_BASE_URL=https://api.groq.com/openai/v1
+LLM_MODEL=openai/gpt-oss-120b
+LLM_FALLBACK_MODEL=openai/gpt-oss-20b
+```
 
-## Notes & next steps
+Netlify reads the publish and function settings from `netlify.toml`:
 
-- Retrieval is TF-IDF (classic keyword-weighted search), not vector embeddings — it
-  needs no extra API key and is plenty accurate for a knowledge base this size. If you
-  grow the dataset past a few hundred entries, consider swapping `lib/rag.js` for a
-  real vector store.
-- The current `data/knowledge_base.json` deliberately marks anything time-sensitive as
-  sample data so the bot never states a stale fee or deadline as certain. Replace those
-  entries as you collect real data (your Step 1).
-- Everything here runs on Netlify's free tier plus Groq's free tier — no paid
-  infrastructure required to get started.
+```toml
+[build]
+   publish = "public"
+   functions = "netlify/functions"
+```
+
+After every push to `main`, Netlify automatically builds and redeploys the site.
+
+## 🔒 Security Notes
+
+- Never commit `.env`, API keys, or private credentials.
+- Rotate an API key immediately if it has been exposed.
+- Keep changing information marked as sample data until it is verified.
+- Configure production API keys through Netlify environment variables.
+
+## 📌 Suggested Repository Description
+
+```text
+AI-powered Corvit IT course admissions chatbot with RAG search and Netlify Functions.
+```
+
+## 📄 License
+
+This project is private and intended for Corvit Systems website and admissions-assistant use.
